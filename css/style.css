@@ -14,12 +14,32 @@ body {
 .marTop20 {
 	margin-top: 20px;
 }
-.vertical-offset-100 {
-        padding-top: 50%;
-    }
-    .img-responsive {
+/*.vertical-offset-100 {
+    padding-top: 50%;
+}*/
+.img-responsive {
     display: block;
     max-width: 100%;
     height: auto;
     margin: auto;
-    }
+}
+
+/*iPhone<5*/
+@media screen and (device-aspect-ratio: 2/3) {
+
+}
+
+/*iPhone 5*/
+@media screen and (device-aspect-ratio: 40/71) {
+
+}
+
+/*iPhone 6*/
+@media screen and (device-aspect-ratio: 667/375) {
+
+}
+
+/*iPhone 6 Plus*/
+@media screen and (device-aspect-ratio: 16/9) {
+
+}
