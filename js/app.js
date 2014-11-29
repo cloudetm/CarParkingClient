@@ -7,11 +7,15 @@ parkease.config(["$routeProvider",  function($routeProvider) {
 	$routeProvider.
 		when('/', {
 			templateUrl: '../partials/home.html',
-			controller: 'signinCtrl'
+			controller: 'SignInCtrl'
 		}).
-		when('/home', {
-			templateUrl: '../partials/home.html',
-			controller: 'signinCtrl'
+		when('/listspace', {
+			templateUrl: '../partials/listSpace.html',
+			controller: 'ListSpaceCtrl'
+		}).
+		when('/findspace', {
+			templateUrl: '../partials/findSpace.html',
+			controller: 'FindSpaceCtrl'
 		}).
 		otherwise({
 			redirectTo: '/'
