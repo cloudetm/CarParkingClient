@@ -1,20 +1,19 @@
 'use strict';
 
-/* App Module */
+var parkease = angular.module("parkease", ["ngRoute"]);
 
-var phonecatApp  = angular.module('phonecatApp', [
-	'ngRoute',
-	'phonecatControllers'
-]);
+parkease.config(["$routeProvider",  function($routeProvider) {
 
-phonecatApp.config(['$routeProvider', function($routeProvider){
-	$routeProvider.when('/phones', {
-		templateUrl : 'partials/phone-list.html',
-		controller: 'PhoneListCtrl'
-	}).when('/phones/:phoneId', {
-		templateUrl : 'partials/phone-details.html',
-		controller: 'PhoneDetailsCtrl'
-	}).otherwise({
-		redirectTo: '/phones'
-	});
+	$routeProvider.
+		when('/', {
+			templateUrl: '../partials/home.html',
+			controller: 'signinCtrl'
+		}).
+		when('/home', {
+			templateUrl: '../partials/home.html',
+			controller: 'signinCtrl'
+		}).
+		otherwise({
+			redirectTo: '/'
+		});
 }]);
