@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+/* Credit to bootsnipp.com for the css for the color graph */
+body {
+	background-color: #00f6d3;
+}
+.mainLogo {
+    display: inline-block;
+	width: 20%;
+	height: 181px;
+	margin-left: 40%;
+	margin-top: 25%;
+}
+.marTop20 {
+	margin-top: 20px;
+}
