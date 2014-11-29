@@ -17,6 +17,10 @@ parkease.config(["$routeProvider",  function($routeProvider) {
 			templateUrl: '../partials/findSpace.html',
 			controller: 'FindSpaceCtrl'
 		}).
+		when('/locatespace', {
+			templateUrl: '../partials/locateSpace.html',
+			controller: 'LocateSpaceCtrl'
+		}).
 		otherwise({
 			redirectTo: '/'
 		});
