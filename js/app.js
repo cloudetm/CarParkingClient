@@ -1,6 +1,6 @@
 'use strict';
 
-var parkease = angular.module("parkease", ["ngRoute"]);
+var parkease = angular.module("parkease", ["ngRoute", "ngDialog"]);
 
 parkease.config(["$routeProvider",  function($routeProvider) {
 
@@ -25,3 +25,11 @@ parkease.config(["$routeProvider",  function($routeProvider) {
 			redirectTo: '/'
 		});
 }]);
+
+window.captureRegistrationData = function(index) {
+	var dom = document.getElementById('regFormContainer');
+	var $scope = angular.element(dom).scope();
+	//Pass all the information
+
+	$scope.loadPopup.call($scope, index);
+}
