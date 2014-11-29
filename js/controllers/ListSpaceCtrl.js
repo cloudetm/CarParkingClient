@@ -1,4 +1,4 @@
-parkease.controller('ListSpaceCtrl',['$scope','$location','$http', 'ngDialog' ,function($scope,$location,$http, ngDialog) {
+parkease.controller('ListSpaceCtrl',['$scope','$location','$http', 'ngDialog', '$route' ,function($scope,$location,$http, ngDialog, $route) {
 	$scope.isFormEnabled = true;
 	$scope.isMapEnabled = false;
 
@@ -13,9 +13,17 @@ parkease.controller('ListSpaceCtrl',['$scope','$location','$http', 'ngDialog' ,f
 		password: '',
 		address: '',
 		slots: -1,
-		rent: 0,
+		rent: 100,
 		fits: 0,
-		on: [],
+		on: {
+			mon: false,
+			tue: false,
+			wed: false,
+			thr: false,
+			fri: false,
+			sat: false,
+			sun: false
+		},
 		from: '',
 		to: ''
 	};
@@ -24,23 +32,22 @@ parkease.controller('ListSpaceCtrl',['$scope','$location','$http', 'ngDialog' ,f
 
 		$scope.selectedIndex = selectedIndex;
 		//Need to load popup..
-		ngDialog.open({ 
+		$scope.dialog = ngDialog.open({ 
 	    	template: 'registrationModal',
-	    	scope: $scope
+	    	scope: $scope,
+	    	id: 'registrationDialog'
 	    });
 	};
 
-	$scope.signUp = function(index) {
-		debugger;
-
-		/*$scope.slots = data.slots;
-		$scope.rent = data.rent;
-		$scope.fits = data.fits;
-		$scope.on = data.on;
-		$scope.from = data.from;
-		$scope.to = data.to;*/
-
-		//Sync with server and redirect to next page 
+	$scope.signUp = function() {
+		$http.get('data/regSuccess.json', $scope.formData).success(function(response){
+			if(response.data.success) {
+				ngDialog.close($scope.dialog.id);
+				$location.url('goldmine');
+			}
+ 		}).error(function(){
+			alert('Error')
+		});
 	};
 	$scope.createMarker = function(point, top, left, name, i) {
 		var g = google.maps;
@@ -88,6 +95,11 @@ parkease.controller('ListSpaceCtrl',['$scope','$location','$http', 'ngDialog' ,f
 	$scope.toggleAndLoadMap = function() {
 		$scope.isFormEnabled = !$scope.isFormEnabled
 		$scope.isMapEnabled = !$scope.isMapEnabled
+
+		/*$scope.dialog  = ngDialog.open({ 
+	    	template: 'registrationModal',
+	    	scope: $scope
+	    });*/
 
 		var g = google.maps;
 

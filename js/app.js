@@ -21,15 +21,23 @@ parkease.config(["$routeProvider",  function($routeProvider) {
 			templateUrl: '../partials/locateSpace.html',
 			controller: 'LocateSpaceCtrl'
 		}).
+		when('/goldmine', {
+			templateUrl: '../partials/goldMine.html',
+			controller: 'GoldMineCtrl'
+		}).
+		when('/cashregister', {
+			templateUrl: '../partials/cashRegister.html',
+			controller: 'CashRegisterCtrl'
+		}).
 		otherwise({
 			redirectTo: '/'
 		});
 }]);
 
-window.captureRegistrationData = function(index) {
+/*window.captureRegistrationData = function(index) {
 	var dom = document.getElementById('regFormContainer');
 	var $scope = angular.element(dom).scope();
 	//Pass all the information
 
 	$scope.loadPopup.call($scope, index);
-}
+}*/

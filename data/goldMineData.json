@@ -1,0 +1,22 @@
+{
+	"success": true,
+	"data": {	
+		"slot": 2,
+		"position": {
+			"lat": "51.179342", 
+			"lng": "10.50292",
+			"name": "Bangalore, India",
+			"top": 64,
+			"left": 32
+		},
+		"address": "Bangalore, India",
+		"rent": 100,
+		"linkMind": [
+			{ "name":"Germany", "lat":"51.179342", "lng":"10.50292", "top": 64, "left": 32 },
+			{ "name":"Netherlands", "lat":"52.54963", "lng":"6.29516", "top": 0, "left": 0 },
+			{ "name":"Belgium", "lat":"50.84854", "lng":"4.3517", "top": 96, "left": 0 },
+			{ "name":"France", "lat":"46.69466", "lng":"2.48291", "top": 32, "left": 0 },
+			{ "name":"Austria", "lat":"47.591346", "lng":"14.545898", "top": 0, "left": 32 }
+		]
+	}
+}

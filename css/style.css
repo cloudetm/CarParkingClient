@@ -70,6 +70,20 @@
     margin-right: 10px;
 }	
 
+.reg-pop-up {
+    padding: 10px;
+}
+
+.reg-pop-up label {
+    font-size: 14px;
+}
+.reg-pop-up .checkbox-inline {
+    margin-left: 0px;   
+}
+.fits {
+    margin-left: 2px; margin-top:-5px; 
+}
+
 .btn-locate-it {
     background-color: #68c7bb; border-radius: 0; border: 0; color: #000;
 }	
