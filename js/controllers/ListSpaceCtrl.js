@@ -6,6 +6,8 @@ parkease.controller('ListSpaceCtrl',['$scope','$location','$http', 'ngDialog', '
 	$scope.iw = undefined;
 	$scope.gmarkers = [];
 
+	$scope.$emit('changeBg', true);
+
 	$scope.formData = {
 		firstName: '',
 		lastName: '',

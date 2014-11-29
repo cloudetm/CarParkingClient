@@ -1,0 +1,52 @@
+{
+	"success": true,
+	"data": {
+		"today": [{
+			"date": "Today",
+			"startTime": "10 am",
+			"endTime": "2 pm",
+			"guest": "VISHAL",
+			"carNumber": "KA01 ML3212",
+			"ranked": 1
+		}, {
+			"date": "Today",
+			"startTime": "10 am",
+			"endTime": "2 pm",
+			"guest": "SURIYA",
+			"carNumber": "KA01 ML3212",
+			"ranked": 3
+		}, {
+			"date": "Today",
+			"startTime": "10 am",
+			"endTime": "2 pm",
+			"guest": "PIYUSH",
+			"carNumber": "KA01 ML3212",
+			"ranked": 2
+		}],
+		"encashed": [{
+			"date": "12/07/2014",
+			"startTime": "10 am",
+			"endTime": "2 pm",
+			"guest": "VISHAL",
+			"carNumber": "KA01 ML3212",
+			"ranked": 3,
+			"earning": 2000
+		}, {
+			"date": "12/08/2014",
+			"startTime": "10 am",
+			"endTime": "2 pm",
+			"guest": "SURIYA",
+			"carNumber": "KA01 ML3212",
+			"ranked": 4,
+			"earning": 2000
+		}, {
+			"date": "12/09/2014",
+			"startTime": "10 am",
+			"endTime": "2 pm",
+			"guest": "PIYUSH",
+			"carNumber": "KA01 ML3212",
+			"ranked": 5,
+			"earning": 2000
+		}]	
+	}
+}
