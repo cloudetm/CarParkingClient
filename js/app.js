@@ -29,6 +29,10 @@ parkease.config(["$routeProvider",  function($routeProvider) {
 			templateUrl: '../partials/cashRegister.html',
 			controller: 'CashRegisterCtrl'
 		}).
+		when('/bookings', {
+			templateUrl: '../partials/pitSpots.html',
+			controller: 'BookingCtrl'
+		}).
 		otherwise({
 			redirectTo: '/'
 		});
