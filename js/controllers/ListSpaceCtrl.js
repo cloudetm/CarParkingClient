@@ -1,6 +1,7 @@
 parkease.controller('ListSpaceCtrl',['$scope','$location','$http', 'ngDialog', '$route' ,function($scope,$location,$http, ngDialog, $route) {
 	$scope.isFormEnabled = true;
-	$scope.isMapEnabled = false;
+	$scope.isMapEnabled = true;
+	$scope.extraInfo = false;
 
 	$scope.map = undefined;
 	$scope.iw = undefined;
@@ -31,20 +32,22 @@ parkease.controller('ListSpaceCtrl',['$scope','$location','$http', 'ngDialog', '
 	};
 
 	$scope.loadPopup = function(selectedIndex) {
-
 		$scope.selectedIndex = selectedIndex;
+		document.getElementById('regFormContainer').style.display = 'none';
+		document.getElementById('extraInfo').style.display = 'block';
+		//$scope.address = 
 		//Need to load popup..
-		$scope.dialog = ngDialog.open({ 
+		/*$scope.dialog = ngDialog.open({ 
 	    	template: 'registrationModal',
 	    	scope: $scope,
 	    	id: 'registrationDialog'
-	    });
+	    });*/
 	};
 
 	$scope.signUp = function() {
 		$http.get('data/regSuccess.json', $scope.formData).success(function(response){
 			if(response.data.success) {
-				ngDialog.close($scope.dialog.id);
+				//ngDialog.close($scope.dialog.id);
 				$location.url('goldmine');
 			}
  		}).error(function(){
@@ -96,51 +99,52 @@ parkease.controller('ListSpaceCtrl',['$scope','$location','$http', 'ngDialog', '
 
 	$scope.toggleAndLoadMap = function() {
 		$scope.isFormEnabled = !$scope.isFormEnabled
-		$scope.isMapEnabled = !$scope.isMapEnabled
+		$scope.isMapEnabled = true;
 
 		/*$scope.dialog  = ngDialog.open({ 
 	    	template: 'registrationModal',
 	    	scope: $scope
 	    });*/
+		if(!$scope.map) {
+			var g = google.maps;
 
-		var g = google.maps;
+			var data = [ // Data of points and coords of sprite icons
+				{ name:"Germany", lat:"51.179342", lng:"10.50292", top: 64, left: 32 },
+				{ name:"Netherlands", lat:"52.54963", lng:"6.29516", top: 0, left: 0 },
+				{ name:"Belgium", lat:"50.84854", lng:"4.3517", top: 96, left: 0 },
+				{ name:"France", lat:"46.69466", lng:"2.48291", top: 32, left: 0 },
+				{ name:"Austria", lat:"47.591346", lng:"14.545898", top: 0, left: 32 }
+			];
 
-		var data = [ // Data of points and coords of sprite icons
-			{ name:"Germany", lat:"51.179342", lng:"10.50292", top: 64, left: 32 },
-			{ name:"Netherlands", lat:"52.54963", lng:"6.29516", top: 0, left: 0 },
-			{ name:"Belgium", lat:"50.84854", lng:"4.3517", top: 96, left: 0 },
-			{ name:"France", lat:"46.69466", lng:"2.48291", top: 32, left: 0 },
-			{ name:"Austria", lat:"47.591346", lng:"14.545898", top: 0, left: 32 }
-		];
+			$scope.points = data;
 
-		$scope.points = data;
+			var opts_map = {
+				center: new g.LatLng(50, 8),
+				zoom: 5,
+				mapTypeId: g.MapTypeId.ROADMAP,
+				scaleControl: true,
+				streetViewControl: false,
+				mapTypeControlOptions: {
+					mapTypeIds: [ g.MapTypeId.ROADMAP, g.MapTypeId.SATELLITE, g.MapTypeId.TERRAIN]
+				}
+			};
+			$scope.map = new g.Map(document.getElementById("regMapContainer"), opts_map);
+			$scope.iw = new g.InfoWindow();
+			// v2 behaviour
+			g.event.addListener($scope.map, "click", function() {
+				if ($scope.iw) $scope.iw.close();
+			});
 
-		var opts_map = {
-			center: new g.LatLng(50, 8),
-			zoom: 5,
-			mapTypeId: g.MapTypeId.ROADMAP,
-			scaleControl: true,
-			streetViewControl: false,
-			mapTypeControlOptions: {
-				mapTypeIds: [ g.MapTypeId.ROADMAP, g.MapTypeId.SATELLITE, g.MapTypeId.TERRAIN]
+			// Load all markers
+			for (var i = 0, n; n = data[i]; i++) {
+				var point = new g.LatLng(parseFloat(n.lat), parseFloat(n.lng));
+				$scope.createMarker(point, n.top, n.left, n.name, i);
 			}
-		};
-		$scope.map = new g.Map(document.getElementById("regMapContainer"), opts_map);
-		$scope.iw = new g.InfoWindow();
-		// v2 behaviour
-		g.event.addListener($scope.map, "click", function() {
-			if ($scope.iw) $scope.iw.close();
-		});
-
-		// Load all markers
-		for (var i = 0, n; n = data[i]; i++) {
-			var point = new g.LatLng(parseFloat(n.lat), parseFloat(n.lng));
-			$scope.createMarker(point, n.top, n.left, n.name, i);
 		}
 	}
 
 	$scope.toggleForm = function() {
 		$scope.isFormEnabled = !$scope.isFormEnabled
-		$scope.isMapEnabled = !$scope.isMapEnabled
+		$scope.isMapEnabled = true;
 	}
 }]);

@@ -2,6 +2,15 @@
 /* CSS Document */
 /* Credit to bootsnipp.com for the css for the color graph */
 
+@font-face {
+    font-family: roboto;
+    src: url(roboto/Roboto-Light.ttf);
+    font-weight: bold;
+}
+
+body {
+  font-family: roboto;
+}
 
 .mainContainer {
     background-color: #00f6d3;
@@ -29,9 +38,14 @@
     width: 70%;
 }
 .header-title h2 {
-    color: #f47c59;
+  color: #f47c59;
+  font-size: 20px;
+  margin-left: 24%;
 }
 
+.marAuto {
+  margin: 0 auto;
+}
 .marTop10 {
     margin-top: 10px;
 }
@@ -42,8 +56,25 @@
 	margin-top: 20px;
 }
 
+.marRight10 {
+  margin-right: 10px; 
+}
+.font-size8-bold {
+  font-size: 8px; font-weight: bold;
+}
 .marBottom20{
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.marBottom10{
+  margin-bottom: 10px;
+}
+.pad
+.marBottom5 {
+  margin-bottom: 5px;
+}
+.marRight20 {
+  margin-right: 20px;
 }
 
 .vertical-offset-100 {
@@ -57,17 +88,29 @@
     margin: auto;
 }
 
+.width-pull-left {
+  width: 18%;
+  border-right: 1px solid #e3e3e3;  
+  margin-right: 1%;
+}
+
+.width-pull-left2 {
+  width: 19%;
+  border-right: 1px solid #e3e3e3;  
+  margin-right: 1%;
+}
+
 .reg-menu-icon {
-    width: 40px; 
-    height: 40px; 
-    background: #f47c59; 
-    border: 1px solid #acaaa6; 
-    -moz-border-radius: 50px; 
-    -webkit-border-radius: 50px; 
-    border-radius: 50px; 
-    padding: 12px 7px; 
-    vertical-align: middle; 
-    margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  background: #f47c59;
+  /* border: 1px solid #acaaa6; */
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  padding: 9px 7px;
+  vertical-align: middle;
+  margin-right: 10px;
 }	
 
 .reg-pop-up {
@@ -78,15 +121,25 @@
     font-size: 14px;
 }
 .reg-pop-up .checkbox-inline {
-    margin-left: 0px;   
+    margin-left: 0px;  
+    font-size:12px; 
 }
+
+
 .fits {
-    margin-left: 2px; margin-top:-5px; 
+    margin-left: 2px; margin-top:-5px; margin-right:10px; 
 }
 
 .btn-locate-it {
     background-color: #68c7bb; border-radius: 0; border: 0; color: #000;
 }	
+
+.btn-locate-it:hover{
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #e3e3e3;
+}
+
 
 #regMapContainer {
     height: 400px;
@@ -179,7 +232,17 @@
 }    
 
 .btn-list-find-space {
-    font-size: 14px; background-color: #ffffff; border: 0; color: #000;border-radius: 0; opacity: 0.9;
+    font-size: 12px; 
+    background-color: #ffffff; 
+    border: 0; 
+    color: #000;
+    border-radius: 0; 
+    opacity: 0.7;
+}
+a.btn-list-find-space:hover {
+   background-color: #ffffff; 
+   opacity: 1.0;
+   color: #333;
 }
 /*iPhone<5*/
 @media screen and (device-aspect-ratio: 2/3) {
@@ -207,4 +270,80 @@ position: relative;
 display: block;
 float: left;
 width: 100%;
+}
+
+.reset-margin {
+    margin: 0px !important;
+}
+.signupLink {
+  color: #65676e;
+  font-size: 12px;
+}
+
+a.signupLink:hover {
+  text-decoration: none;
+}
+
+.form-control::-webkit-input-placeholder { 
+  color: #dcdee0;
+}
+.botton-border {
+  border-bottom: 1px solid #e3e3e3;
+}
+.form-control {
+  border: 0px;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  background: #f6f6f6;
+}
+.font-weight-normal {
+  font-weight: normal;
+}
+
+.padBottom10 {
+  padding-bottom: 10px;
+}
+
+.approveBtn {
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 0;
+  background-color: #68c7bb;
+  border: 0;
+  color: #586b6f;
+}
+
+.searchtext {
+
+-webkit-box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+background-color: rgb(255, 255, 255);
+background-image: none;
+border-bottom-color: rgb(204, 204, 204);
+border-bottom-left-radius: 4px;
+border-bottom-right-radius: 0px;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-collapse: separate;
+border-image-outset: 0px;
+border-image-repeat: stretch;
+border-image-slice: 100%;
+border-image-source: none;
+border-image-width: 1;
+border-left-color: rgb(204, 204, 204);
+border-left-style: solid;
+border-left-width: 1px;
+border-right-color: rgb(204, 204, 204);
+border-right-style: solid;
+border-right-width: 1px;
+border-top-color: rgb(204, 204, 204);
+border-top-left-radius: 4px;
+border-top-right-radius: 0px;
+border-top-style: solid;
+border-top-width: 1px;
+box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+box-sizing: border-box;
+
 }

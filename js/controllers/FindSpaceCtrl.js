@@ -7,7 +7,7 @@ parkease.controller('FindSpaceCtrl',['$scope','$location','$http','ngDialog', '$
 		lastName: '',
 		mobile: '',
 		password: '',
-		CarNumber:''
+		carNumber:''
 	};
 	$scope.map = undefined;
 	$scope.iw = undefined;
@@ -72,10 +72,10 @@ parkease.controller('FindSpaceCtrl',['$scope','$location','$http','ngDialog', '$
 		$scope.isFormEnabled = !$scope.isFormEnabled
 		$scope.isMapEnabled = !$scope.isMapEnabled
 
-		/*$scope.dialog  = ngDialog.open({ 
+		$scope.dialog  = ngDialog.open({ 
 	    	template: 'registrationModal',
 	    	scope: $scope
-	    });*/
+	    });
 
 		var g = google.maps;
 

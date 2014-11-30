@@ -1,5 +1,5 @@
-<div class="row">
-	<div class="row" style="border-bottom: 1px solid #86898e;">
+<div class="row" style="overflow-x:hidden;">
+	<div class="row" style="border-bottom: 1px solid #e3e3e3;">
 		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center header-logo">
 			<img src="../img/inner_logo_33x33.png" />
 		</div>
@@ -8,30 +8,33 @@
 		</div>
 	</div>
 
-	<div class="row col-lg-9 col-md-9 col-sm-9 marTop10" id="regFormContainer">
+	<div class="row col-lg-9 col-md-9 col-sm-9 marTop10" id="regFormContainer" ng-show="!extraInfo">
 	    <div class="col-xs-12 col-sm-6 col-md-6">
-	    	<a href="javascript:void(0);" ng-click="toggleForm()" style="color: #65676e; font-size: 16px;">
+	    	<a href="javascript:void(0);" ng-click="toggleForm()" class="signupLink">
 	    		<span class="badge reg-menu-icon">1</span>
 	    		Let's earn some moolah
 	    	</a>
 	    </div>
+	    
 	    <div class="col-xs-12 col-sm-6 col-md-6" ng-show="isFormEnabled">
 	    	<div class="row marTop20">
-				<div class="col-xs-6 col-sm-6 col-md-6">
-					<div class="form-group">
-            			<input type="text" name="first_name" ng-model="formData.firstName" class="form-control input-lg" placeholder="First Name" tabindex="1">
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="text" name="last_name" ng-model="formData.lastName" class="form-control input-lg" placeholder="Last Name" tabindex="2">
-					</div>
+				<div class="clearfix" style="border-bottom: 1px solid #e3e3e3; margin-left: 20px; margin-right: 20px;">
+				    <div class="col-xs-6 col-sm-6 col-md-6" style="padding-right: 0; border-right: 1px solid #e3e3e3;">
+				        <div class="form-group" style="margin-bottom: 0;">
+				            <input type="text" ng-model="formData.firstName" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1" style="padding-left: 0px;border: 0; box-shadow: none; font-size: 14px;">
+				        </div>
+				    </div>
+				    <div class="col-xs-6 col-sm-6 col-md-6" style="padding-left: 0;">
+				        <div class="form-group" style="margin-bottom: 0;">
+				            <input type="text" ng-model="formData.lastName" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2" style="border: 0; box-shadow: none; font-size: 14px;">
+				        </div>
+				    </div>
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="form-group marTop20 botton-border">
 				<input type="text" name="mobile" id="mobile" ng-model="formData.mobile" class="form-control input-lg" placeholder="Mobile" tabindex="3">
 			</div>
-			<div class="form-group">
+			<div class="form-group botton-border" >
 				<input type="password" name="password" ng-model="formData.password" class="form-control input-lg" placeholder="Password" tabindex="4">
 			</div>
             <div class="row">
@@ -41,95 +44,93 @@
 			</div>
 	    </div>
 
-	    <div class="col-xs-12 col-sm-6 col-md-6 marTop5">
-	    	<a href="javascript:void(0);" ng-click="toggleForm()" style="color: #65676e; font-size: 16px;">
+	    <div class="col-xs-12 col-sm-6 col-md-6 marTop20">
+	    	<a href="javascript:void(0);" ng-click="toggleForm()" class="signupLink">
 	    		<span class="badge reg-menu-icon">2</span>
 	    		Your gold mine
 	    	</a>
 	    </div>
 	    <div class="col-xs-12 col-sm-6 col-md-6 marTop10" ng-show="isMapEnabled">
-	    	<div id="regMapContainer">
-	    	<div>
+	    	<div id="regMapContainer" >
+	    		<img src="img/reg-map.png" />
+	    	</div>
 	    </div>
 	</div>
-</div>
-
-<script type="text/ng-template" id="registrationModal">	
-	<div class="modal-body reg-pop-up">
-	    <div class="arrow"></div>
-		<div class="popover-content">	
-			<div class="marTop5">
-				<input type="text" name="address" ng-model="formData.address" class="form-control input-lg" placeholder="Address" tabindex="3">
-			</div>
-			<div class="marTop5">
-				<label>SLOTS: </label>
-			</div>
-		    <div class="marTop5">
-				<input type="radio" ng-model="formData.slots" name="optionsRadios" id="optionsRadios1" ng-value=1 checked>1
-		        <input type="radio" ng-model="formData.slots" name="optionsRadios" id="optionsRadios2" ng-value=2 checked>2
-		        <input type="radio" ng-model="formData.slots" name="optionsRadios" id="optionsRadios3" ng-value=3 checked>3
-			</div>
-			<div class="marTop5">
-				<label>MOOLAH: </label>
-			</div>
-		    <div class="marTop5">
-
-		        <span >INR {{formData.rent}} / hr / space</span>
-		    </div>
-		    <div class="marTop5">
-		    	<label>FITS: </label>
-			</div>
-			<div class="marTop5"> 
-				<input type="radio" ng-model="formData.fits" name="optionsRadios" ng-value=1 checked>
-				<img src="../img/car1_33x33.png" class="fits">
-		        <input type="radio" ng-model="formData.fits" name="optionsRadios" id="optionsRadios5" ng-value=2 checked>
-		        <img src="../img/car4_33x33.png" class="fits">
-		        <input type="radio" ng-model="formData.fits" name="optionsRadios" id="optionsRadios6" ng-value=3 checked>
-		        <img src="../img/car3_33x33.png" class="fits">
-		        <input type="radio" ng-model="formData.fits" name="optionsRadios" id="optionsRadios7" ng-value=4 checked>
-		        <img src="../img/car2_33x33.png" class="fits">
-			</div>
-			<div class="marTop5">
-				<label>ON: </label>
-			</div>
-		    <div class="marTop5">
-				<label class="checkbox-inline">
-		          <input type="checkbox" ng-model="formData.on.mon"> MON
-		        </label>
-		        <label class="checkbox-inline">
-		          <input type="checkbox" ng-model="formData.on.tue"> TUE
-		        </label>
-		        <label class="checkbox-inline">
-		          <input type="checkbox" ng-model="formData.on.wed"> WED
-		        </label>
-		        <label class="checkbox-inline">
-		          <input type="checkbox" ng-model="formData.on.thu"> THU
-		        </label>
-		        <label class="checkbox-inline">
-		          <input type="checkbox" ng-model="formData.on.fri"> FRI
-		        </label>
-		        <label class="checkbox-inline">
-		          <input type="checkbox" ng-model="formData.on.sat"> SAT
-		        </label>
-		        <label class="checkbox-inline">
-		          <input type="checkbox" ng-model="formData.on.sun"> SUN
-		        </label>
-			</div>
-			<div class="marTop5">
-				<label>AVAILABLE FROM: </label>
-			</div>
-			<div class="marTop5">
-				<input type="text" name="time" ng-model="formData.from" class="form-control input-lg" placeholder="Time" tabindex="3">
-			</div>
-			<div class="marTop5">
-				<label>TILL: </label>
-			</div>
-		    <div class="marTop5">
-				<input type="text" name="time" ng-model="formData.to" class="form-control input-lg" placeholder="Time" tabindex="3">
-			</div>
-		    <div class="marTop5">
-				<div class="col-xs-12 col-md-6"><input type="submit" ng-click="signUp()" value="Sign Up" class="btn btn-primary btn-block btn-lg" tabindex="7" style="background-color: #68c7bb; border-radius: 0; border: 0; color: #000;"></div>
+	
+	<div class="row col-lg-9 col-md-9 col-sm-9 marTop10 reg-pop-up" id="extraInfo" style="margin: 0px;display:none;">
+		<div class="marTop5" style="border-bottom:1px solid #e3e3e3;">
+			<input type="text" name="address" ng-model="formData.address" class="form-control input-lg" placeholder="Address" tabindex="3" style="background:transparent;">
+		</div>
+		<div class="row marTop20 botton-border" style="margin:20px 0px 10px 0px">
+			<label class="font-weight-normal pull-left marRight10">SLOTS: </label>
+			<div class="pull-left">
+				<label class="marRight20">
+					<input type="radio" style="margin-right:5px;" ng-model="formData.slots" name="optionsRadios" id="optionsRadios1" ng-value=1 checked>1
+				</label>
+		        <label class="marRight20"><input type="radio" style="margin-right:5px;" ng-model="formData.slots" name="optionsRadios" id="optionsRadios2" ng-value=2 checked>2</label>
+		        <label class="marRight20"><input type="radio" style="margin-right:5px;" ng-model="formData.slots" name="optionsRadios" id="optionsRadios3" ng-value=3 checked>3</label>
 			</div>
 		</div>
+		<div class="row marTop20 botton-border" style="margin:20px 0px 10px 0px">
+			<label class="font-weight-normal pull-left marRight10" >MOOLAH: </label>
+			<span style="color: #65676e; font-size: 14px;" class="pull-left;">INR {{formData.rent}} / hr / space</span>
+		</div>
+	    
+	    <div class="marTop20">
+	    	<label>FITS: </label>
+		</div>
+		<div class="botton-border"> 
+			<input type="radio" ng-model="formData.fits" name="optionsRadios2" ng-value=1 checked>
+			<img src="../img/car1_33x33.png" class="fits">
+	        <input type="radio" ng-model="formData.fits" name="optionsRadios2" id="optionsRadios5" ng-value=2 checked>
+	        <img src="../img/car4_33x33.png" class="fits">
+	        <input type="radio" ng-model="formData.fits" name="optionsRadios2" id="optionsRadios6" ng-value=3 checked>
+	        <img src="../img/car3_33x33.png" class="fits">
+	        <input type="radio" ng-model="formData.fits" name="optionsRadios2" id="optionsRadios7" ng-value=4 checked>
+	        <img src="../img/car2_33x33.png" class="fits">
+		</div>
+		<div class="marTop20">
+			<label>ON: </label>
+		</div>
+	    <div class="pull-left botton-border padBottom10">
+			<label class="checkbox-inline">
+	          <input type="checkbox" ng-model="formData.on.mon"> MON
+	        </label>
+	        <label class="checkbox-inline">
+	          <input type="checkbox" ng-model="formData.on.tue"> TUE
+	        </label>
+	        <label class="checkbox-inline">
+	          <input type="checkbox" ng-model="formData.on.wed"> WED
+	        </label>
+	        <label class="checkbox-inline">
+	          <input type="checkbox" ng-model="formData.on.thu"> THU
+	        </label>
+	        <label class="checkbox-inline">
+	          <input type="checkbox" ng-model="formData.on.fri"> FRI
+	        </label>
+	        <label class="checkbox-inline">
+	          <input type="checkbox" ng-model="formData.on.sat"> SAT
+	        </label>
+	        <label class="checkbox-inline">
+	          <input type="checkbox" ng-model="formData.on.sun"> SUN
+	        </label>
+		</div>
+		<div class="clearfix"></div>
+		<div class="marTop20">
+			<label>AVAILABLE FROM: </label>
+		</div>
+		<div class="botton-border">
+			<input type="text" name="time" ng-model="formData.from" class="form-control input-lg" placeholder="Time" tabindex="3">
+		</div>
+		<div class="marTop5">
+			<label>TILL: </label>
+		</div>
+	    <div class="botton-border">
+			<input type="text" name="time" ng-model="formData.to" class="form-control input-lg" placeholder="Time" tabindex="3">
+		</div>
+	    <div class="marTop10">
+			<div class="col-xs-12 col-md-6" style="padding-left:0px; padding-right:0px;">
+				<input type="submit" ng-click="signUp()" value="Sign Up" class="btn btn-primary btn-block btn-lg" tabindex="7" style="background-color: #68c7bb; border-radius: 0; border: 0; color: #000;"></div>
+		</div>
 	</div>
-</script>
+</div>

@@ -1,61 +1,68 @@
 <div class="row">
-	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 marBottom10">
 		<div class="row" style="border-bottom: 1px solid #86898e;">
 			<span class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center" style="line-height: 63px;"><img src="../img/inner_logo_33x33.png"></span>
 			<span class="col-lg-9 col-md-9 col-sm-9 col-xs-9 text-center" style="top: 16px; padding-left: 40px;"><h4 class="text-center" style="color: #f47c59;">YOUR CASH COW</h4></span>
 			<span class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center" style="line-height: 63px;"><img src="../img/flip_33x33.png"></span>
 		</div>
-		<div class="row marTop20 text-center" style="border-bottom: 1px solid #f47c59; margin-left: 10px; margin-right: 10px;">
+		<div class="row marTop20 marBottom5 text-center" style="border-bottom: 1px solid #e3e3e3;">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="font-size: 12px;">
-				<a href="/#goldmine">GOLD MINE</a>
+				<a href="/#goldmine" style="color:#cccccc;" >GOLD MINE</a>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="font-size: 12px;">
 				<a href="/#cashregister" style="color:red;">CASH REGISTER</a>
 			</div>
 		</div>
-		
-        <div class="row" style="font-size: 11px; margin-top: 10px;" ng-repeat="item in info.today">
-        	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span style="color: #9f9ea2;">{{item.date}}</span><br>{{item.startTime}} - {{item.endTime}}</div>
-        	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span style="color: #9f9ea2;">GUEST</span><br>{{item.guest}}</div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span style="color: #9f9ea2;">CAR Nos.</span><br>{{item.carNumber}}</div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="width: 27%;"><span style="color: #9f9ea2;">RANKED</span><br><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="width: 19%;">
-            	<button type="button" class="btn btn-default" style="padding: 6px 5px; font-size: 12px; line-height: 1.5; border-radius: 0; background-color: #68c7bb; border: 0; color: #586b6f;">Approve</button>
-
-
-            	<!-- <div class="dropdown pull-left">
-                	<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style="	border: 0; border-radius: 0; padding: 5px; background-color: #68c7bb;"><span class="caret" style="color: #a6aba9;"></span>
-                  </button>   -->
-                  <!-- <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-                  </ul> -->
-                <!-- </div> -->
-            </div>
-           </div>
-            
-        </div>
-        <div class="row" style="margin:10px">
-        	<label>ENCASHED</label>
-        </div>
-        <div class="row" style="font-size: 11px; margin: 10px;" ng-repeat="item in info.encashed">
-        	<div class="pull-left" style="width:20%"> 
-        		<span style="#9f9ea2">{{item.date}} <br/> {{item.startDate}} - {{item.endDate}}</span>
-        	</div>
-        	<div class="pull-left" style="width:20%"> 
-        		<span style="#9f9ea2">GUEST <br/> {{item.guest}}</span>
-        	</div>
-        	<div class="pull-left" style="width:20%"> 
-        		<span style="#9f9ea2">CAR NO: <br/> {{item.carNumber}}</span>
-        	</div>
-        	<div class="pull-left" style="width:20%"> 
-        		<span style="#9f9ea2">EARNING <br/> {{item.earning}}</span>
-        	</div>
-        	<div class="pull-left" style="width:20%"> 
-        		<button>RATE</button>
-        	</div>
-        </div>
 	</div>
+    <div class="clearfix"></div>
+    <div class="row marAuto marTop10" style="font-size:11px;margin: 20px 0px 10px 10px;" ng-repeat="item in info.today">
+            <div class="width-pull-left pull-left">
+                <span style="color: #9f9ea2;">{{item.date}}</span><br />
+                <span class="font-size8-bold">{{item.startTime}}-{{item.endTime}}</span>
+            </div>
+            <div class="width-pull-left pull-left">
+                <span style="color:#9f9ea2">GUEST</span> <br/>
+                <span class="font-size8-bold">{{item.guest}}</span>
+            </div>
+            <div class="width-pull-left pull-left">
+                <span style="color: #9f9ea2;">CAR Nos.</span><br />
+                <span class="font-size8-bold">{{item.carNumber}}</span>
+            </div>
+            <div class="pull-left" style="margin-right:1%;">
+                <span style="color: #9f9ea2;">RANKED</span><br><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span>
+            </div>
+            <div class="pull-left">
+                <button type="button" class="btn btn-default approveBtn">Approve</button>
+            </div>
+           </div>    
+           <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row marTop20" style="margin-left: -2px;">
+            <label>ENCASHED</label>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row marAuto marTop10" style="font-size:11px;margin: 20px 0px 10px 0px;" ng-repeat="item in info.encashed">
+            <div class="width-pull-left pull-left">
+                <span style="color: #9f9ea2;">{{item.date}}</span><br />
+                <span class="font-size8-bold">{{item.startTime}}-{{item.endTime}}</span>
+            </div>
+            <div class="width-pull-left pull-left">
+                <span style="color:#9f9ea2">GUEST</span> <br/>
+                <span class="font-size8-bold">{{item.guest}}</span>
+            </div>
+            <div class="width-pull-left pull-left" style="width:20%;">
+                <span style="color: #9f9ea2;">CAR Nos</span><br />
+                <span class="font-size8-bold">{{item.carNumber}}</span>
+            </div>
+            <div class="pull-left" style="margin-right:2%;width:19%;">
+               <span style="color: #9f9ea2;">EARNING</span><br />
+                <span class="font-size8-bold">{{item.earning}}</span>
+            </div>
+            <div class="pull-left">
+                <button type="button" class="btn btn-default approveBtn">RATE</button>
+            </div>
+        </div>    
+        <div class="clearfix"></div>
+    </div>
 </div>

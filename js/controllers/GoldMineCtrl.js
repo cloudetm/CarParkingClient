@@ -5,7 +5,7 @@ parkease.controller('GoldMineCtrl',['$scope','$location','$http',function($scope
 	$http.get('data/goldMineData.json').success(function(response){
 		if(response.success) {
 			$scope.info = response.data;
-			$scope.generateMap('selectedAreaMap', [$scope.info.position]);
+			//$scope.generateMap('selectedAreaMap', [$scope.info.position]);
 			$scope.generateMap('linkMindNearMap', $scope.info.linkMind);
 		}
 	}).error(function(){
